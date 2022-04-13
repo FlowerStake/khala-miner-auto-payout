@@ -49,7 +49,7 @@ node autopayout.js
 ```
 Example output for Payout Success:
 
-```
+<pre>
  Khala Miner Rewards Auto Payout 
 
  - Check source at https://github.com/FlowerStake/khala-miner-auto-payout
@@ -63,8 +63,8 @@ Example output for Payout Success:
 2022-04-13 21:44:11        API/INIT: RPC methods not decorated: pha_getMqNextSequence, pha_getStorageChanges, pha_getStorageChangesAt
  -> StakePool with ID 3501 has enough accumulated rewards 345.68 PHA
  -> Sending Rewards Payout to account
- -> Payout Success!
-```
+ <b>-> Payout Success!</b>
+</pre>
 
 NOTE: If the amount of accumulated rewards if less than indicated threshold, this script will exit without execute payout.
 
