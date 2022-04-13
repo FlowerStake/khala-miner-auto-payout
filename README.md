@@ -62,7 +62,7 @@ Example output for Payout Success:
 2022-04-13 21:44:11        REGISTRY: Unknown signed extensions CheckMqSequence found, treating them as no-effect
 2022-04-13 21:44:11        API/INIT: RPC methods not decorated: pha_getMqNextSequence, pha_getStorageChanges, pha_getStorageChangesAt
  -> StakePool with ID 3501 has enough accumulated rewards 345.68 PHA
- -> Sending Rewards Payout to account
+ -> Sending Rewards Payout to account 41KFusidfUf98dfJaUJd9fdKfd7hgU97JFdf9DF7s9dfsd8
  <b>-> Payout Success!</b>
 </pre>
 
