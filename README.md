@@ -1,6 +1,6 @@
 # Khala Miner Rewards auto payout
 
-Claim and distribute StakePool rewards for you and your delegators automagically in Khala Network Secure Worker Mining.
+Claim and distribute StakePool rewards (if they are above threshold, default 100PHA) for you and your delegators automagically in Khala Network Secure Worker Mining.
 
 Made with ❤️  by FlowerStake (Jimi Flowers)
 
@@ -20,10 +20,19 @@ Go to [Polkadot JS UI](https://polkadot.js.org/apps/#/accounts) and export the o
 
 ## Usage
 
+Parameters from config.js
+
+  pool: <YOUR_STAKEPOOL_ID>, // StakePool ID (you can see it on https://app.phala.network)
+  threshold: 100, // Minimum amount of rewards to trigger a Payout
+  destination: '<YOUR_DESTINATION_ADDRESS>', // Destination address to send rewards to, in Khala Format
+  owner: '<STAKEPOOL_OWNER_ADDRESS>', // StakePool Owner Address in Khala Format
+  password: '<YOUR_JSON_FILE_PASSWORD>', // The password that you used to export your StakePool Owner Address 
+  accountJSON: './keystores/address.json', //JSON ACCOUNT FILE EXPORTED FROM PolkadotJS Extension
+
 Using parameters:
 
 ```
-node autopayout.js -c keystores/account.json -p password -I stakepool_ID -S stakepool_owner_address -D rewards_destination_address -T rewards_threshold (default 100 PHA)
+node autopayout.js -c keystores/account.json -p password -I stakepool_ID -S stakepool_owner_address -D rewards_destination_address -T rewards_threshold
 ```
 
 Ask for password:
@@ -51,7 +60,7 @@ Example output for Payout Success:
  -> Connecting to wss://khala.api.onfinality.io/public-ws
 2022-04-13 21:44:11        REGISTRY: Unknown signed extensions CheckMqSequence found, treating them as no-effect
 2022-04-13 21:44:11        API/INIT: RPC methods not decorated: pha_getMqNextSequence, pha_getStorageChanges, pha_getStorageChangesAt
- -> StakePool accumulated rewards 345.68 PHA
+ -> StakePool 3501 accumulated rewards 345.68 PHA
  -> Sending Rewards Payout to account
  -> Payout Success!
 ```
@@ -73,14 +82,14 @@ node autopayout.js
  -> Connecting to wss://khala.api.onfinality.io/public-ws
 2022-04-13 21:44:11        REGISTRY: Unknown signed extensions CheckMqSequence found, treating them as no-effect
 2022-04-13 21:44:11        API/INIT: RPC methods not decorated: pha_getMqNextSequence, pha_getStorageChanges, pha_getStorageChangesAt
- Exiting: StakePool 1751 doesn't have enough amount of rewards to trigger payout (23.74 PHA) 
+ Exiting: StakePool 3501 doesn't have enough amount of rewards to trigger payout (23.74 PHA) 
 ```
 
 NOTE: Set `config.js` file permissions to `600` for better security.
 
 TODO: Adapt to Phala endpoint when available!
 
-
-WARNING: It's not a good idea to save JSON account and password in the same place, especially if the host is connected to Internet. Be
+## WARNING: 
+**It's not a good idea to save JSON account and password in the same place, especially if the host is connected to Internet. Be
 sure that you have enough security meassures on the host where you are running this tool. This software is distributed as is with 
-no warranty. You are solely responsible of your account and your credentials. 
+no warranty. You are solely responsible of your account and your credentials.**
