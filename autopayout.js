@@ -139,10 +139,10 @@ const main = async () => {
     const StakePoolInfo = JSON.parse(StakePoolRaw);
     const ownerReward = (StakePoolInfo.ownerReward / Math.pow(10, decimalPlaces)).toFixed(2);
     if (ownerReward < rewardThreshold) {
-      console.log(`\x1b[1m Exiting: StakePool ${poolid} doesn't have enough amount of rewards to trigger payout (\x1b[0m\x1b[1;32m${ownerReward} PHA\x1b[0m) \x1b[0m\n`);
+      console.log(`\x1b[1m Exiting: StakePool with ID ${poolid} doesn't have enough amount of rewards to trigger payout (\x1b[0m\x1b[1;32m${ownerReward} PHA\x1b[0m) \x1b[0m\n`);
       process.exit(1);
     }
-    console.log(`\x1b[1m -> StakePool ${poolid} accumulated rewards \x1b[0m\x1b[1;32m${ownerReward} PHA\x1b[0m`);
+    console.log(`\x1b[1m -> StakePool with ID ${poolid} has enough accumulated rewards \x1b[0m\x1b[1;32m${ownerReward} PHA\x1b[0m`);
     process.exit(0);
     console.log(`\x1b[1m -> Sending Rewards Payout to account \x1b[0m\x1b[1;32m${destinationAddress}\x1b[0m`);
     var nonce = await api.rpc.system.accountNextIndex(address);
