@@ -71,7 +71,7 @@ NOTE: If the amount of accumulated rewards if less than indicated threshold, thi
 Example output for insufficient amount of rewards:
 
 node autopayout.js
-```
+<pre>
  Khala Miner Rewards Auto Payout 
 
  - Check source at https://github.com/FlowerStake/khala-miner-auto-payout
@@ -83,8 +83,8 @@ node autopayout.js
  -> Connecting to wss://khala.api.onfinality.io/public-ws
 2022-04-13 21:44:11        REGISTRY: Unknown signed extensions CheckMqSequence found, treating them as no-effect
 2022-04-13 21:44:11        API/INIT: RPC methods not decorated: pha_getMqNextSequence, pha_getStorageChanges, pha_getStorageChangesAt
- Exiting: StakePool with ID 3501 doesn't have enough amount of rewards to trigger payout (23.74 PHA) 
-```
+ <b>Exiting: StakePool with ID 3501 doesn't have enough amount of rewards to trigger payout (23.74 PHA)</b>
+</pre>
 
 NOTE: Set `config.js` file permissions to `600` for better security.
 
